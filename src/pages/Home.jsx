@@ -21,17 +21,13 @@ const Home = () => {
     axios
       .get(`${import.meta.env.VITE_API_URL}/categorys`)
       .then(resp => setCategorie(resp.data))
-      .catch(error => {
-        console.log(error);
-      }
-
-      )
+      .catch(error => {console.log(error)})
       .finally(() => {
         setTimeout(() => {
           dispatch(setIsLoading(false))
         }, 1500)
       })
-    dispatch(getProductsThunk())
+     dispatch(getProductsThunk())
 
   }, [])
 
@@ -124,6 +120,7 @@ const Home = () => {
           {/* Listado completo de los productos */}
           {
             products.map((product, index) => (
+              
               <Col className='product d-flex' key={index} as={Link} to={`/products/${product.id}`}>
                 <Card className='Card' style={{ height: '500px', width: '280px' }}>
                   <div className='homeImage'>
@@ -139,7 +136,7 @@ const Home = () => {
                   </div>
                   <Card.Body>
                     <div className='description'>
-                      <Card.Text className='categorie'>{product.category.name}</Card.Text>
+                      <Card.Text className='categorie'>{product.category?.name}</Card.Text>
                       <Card.Title className='title'>{product.title}</Card.Title>
                       <Card.Text className='price'> <span>Price: </span> </Card.Text>
                       <Card.Text className='amount'>{product.price}</Card.Text>

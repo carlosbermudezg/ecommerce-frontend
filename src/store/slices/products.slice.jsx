@@ -43,7 +43,6 @@ export const getFilterProducts = (e) => (dispatch) => {
 }
 
 export const getFilterPrice = (data) => (dispatch) => {
-
   axios
     .get(`${import.meta.env.VITE_API_URL}/products`)
     .then(resp => dispatch(setProduct(resp.data.products.filter(product => (parseInt(product.price)) >= data.priceOne && (parseInt(product.price) <= data.priceTwo)))))
@@ -51,9 +50,7 @@ export const getFilterPrice = (data) => (dispatch) => {
 
 }
 export const filterCategoriesThunk = (id) => (dispatch) => {
-
   dispatch(setIsLoading(true))
-
   axios
     .get(`${import.meta.env.VITE_API_URL}/products/?category=${id}`)
     .then(resp => dispatch(setProduct(resp.data.products)))
