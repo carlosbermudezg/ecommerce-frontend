@@ -20,7 +20,7 @@ export const getProductsThunk = () => (dispatch) => {
 
   axios
     .get(`${import.meta.env.VITE_API_URL}/products`)
-    .then(res => dispatch(setProduct(res.data)))
+     .then(res => dispatch(setProduct(res.data)))
     .catch(error => console.log(error))
     .finally(() => {
       setTimeout(() => {

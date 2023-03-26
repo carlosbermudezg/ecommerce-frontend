@@ -39,29 +39,18 @@ const ProductDetail = () => {
     dispatch(getProductsThunk())
   }, [dispatch]);
 
-  //unico valor por lo la pueda clasificar  a la info del detalle
-  // console.log(detail?.category); //nombre del tipo de producto
-
-  //clasificacion de info del thunk 
-  // console.log(productRelated[1]?.category?.name); //nombre del tipo del producto, no id
-
-  // carrousel miniature 
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleSelect = (index) => {
     setActiveIndex(index);
   };
 
-
-  const similarItems = productRelated?.filter((element) => element?.category?.name === detail?.category);
+  const similarItems = productRelated?.filter((element) =>  element?.categoryId ===detail?.categoryId && detail?.id !== element?.id);
 
   const [input, setInput] = useState(1);
   const dispatchPostCart = useDispatch();
   const navigate = useNavigate();
-  // const dispatchGetCart = useDispatch(); // Depacho del carrito
-  // const cart = useSelector(state =>state.cart) //LECTURA DEL CARRITO
-  // console.log(cart); //LECTURA DE CART , DE LA PETICION GET
-
+  
   const handleSubmit = () => {
 
     if (localStorage.getItem('token')) {
@@ -70,7 +59,6 @@ const ProductDetail = () => {
         quantity: input
       }
       dispatchPostCart(thunkCartPost(data));
-      // dispatchGetCart(thunkCartGet()); //Cuando le das en el boton se hace la peticion get, solo para verificar que funciona correctamente. 
 
     } else {
       navigate('/login')
