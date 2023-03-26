@@ -139,7 +139,7 @@ const Home = () => {
                       <Card.Text className='categorie'>{product.category?.name}</Card.Text>
                       <Card.Title className='title'>{product.title}</Card.Title>
                       <Card.Text className='price'> <span>Price: </span> </Card.Text>
-                      <Card.Text className='amount'>{product.price}</Card.Text>
+                      <Card.Text className='amount'>$ {product.price}</Card.Text>
                     </div>
                   </Card.Body>
                 </Card>
