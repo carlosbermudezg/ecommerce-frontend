@@ -127,12 +127,12 @@ const Home = () => {
                     <Card.Img className='over'
                       variant="top"
                       // Imagen 1
-                      src={products[0]?.productImgs[0]?.url} />
+                      src={product?.productImgs[0]?.url} />
                     <Card.Img
                       className='over1'
                       variant="top"
                       // Imagen 2
-                      src={products[0]?.productImgs[1]?.url} />
+                      src={product?.productImgs[1]?.url} />
                   </div>
                   <Card.Body>
                     <div className='description'>
