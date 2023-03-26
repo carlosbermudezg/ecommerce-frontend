@@ -32,8 +32,11 @@ const Home = () => {
   }, [])
 
   const searchProduct = (e) => {
-    dispatch(getFilterProducts(e))
+   
+
+   dispatch(getFilterProducts(e))
   }
+  
   const submit = (data) => {
     dispatch(getFilterPrice(data))
   }
@@ -44,7 +47,7 @@ const Home = () => {
       {/* Search */}
       <Col className="search">
         <Form className='form-search-home'
-          onSubmit={(e) => searchProduct(e.target[0].value)}>
+          onSubmit={(e) => {e.preventDefault(); searchProduct(e.target[0].value)}}>
           <Form.Control
             type="search"
             placeholder="What are you looking for?"
