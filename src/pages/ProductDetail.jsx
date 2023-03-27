@@ -69,7 +69,7 @@ const ProductDetail = () => {
 
   return (
 
-    <Container className='col-11 conteiner content-details '  >
+    <Container className='col-11 conteiner  '  >
 
       {/* title section */}
       <div className="flex justify-content-start  align-items-center mb-5">
