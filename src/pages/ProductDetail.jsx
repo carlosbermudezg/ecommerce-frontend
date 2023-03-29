@@ -29,10 +29,9 @@ const ProductDetail = () => {
       .then(resp => { setDetail(resp.data) })
       .catch(error => console.log(error))
       .finally(() => dispatch(setIsLoading(false)))
-      
-    window.scrollTo(0, 0);
-
+    
   }, [id])
+  window.scrollTo(0, 0);
 
   //Products per category
   const productRelated = useSelector((state) => state.product);

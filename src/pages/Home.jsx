@@ -28,18 +28,20 @@ const Home = () => {
         }, 1500)
       })
      dispatch(getProductsThunk())
+     
 
   }, [])
 
   const searchProduct = (e) => {
    
-
    dispatch(getFilterProducts(e))
   }
   
   const submit = (data) => {
     dispatch(getFilterPrice(data))
   }
+
+  window.scrollTo(0, 0);
 
   return (
     <div className='content-home'>
