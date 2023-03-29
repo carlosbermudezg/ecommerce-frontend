@@ -30,8 +30,7 @@ const Purchases = () => {
 
 
   return (
-    <div className='content-purchase'>
-
+    <div >
       <section className='section-name-purchase'>
         <Link to={"/"}
           style={{
