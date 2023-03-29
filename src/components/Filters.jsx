@@ -43,12 +43,13 @@ const Filters = () => {
               <Form onSubmit={handleSubmit(submit)} >
                 <Form.Group className="mb-3" controlId="formBasicPriceOne">
                   <Form.Label>From</Form.Label>
-                  <Form.Control type="number" {...register("priceOne")} defaultValue={1000} />
+                  <Form.Control type="number" {...register("priceOne")} placeholder="1000$" min="0" />
+
 
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPriceTwo">
                   <Form.Label>To</Form.Label>
-                  <Form.Control type="number" {...register("priceTwo")} defaultValue={2000} />
+                  <Form.Control type="number" {...register("priceTwo")} placeholder="2000$"  min="0" />
                 </Form.Group>
                 <Button variant="primary" type="submit">
                   Filter Price
