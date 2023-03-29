@@ -26,9 +26,11 @@ const ProductDetail = () => {
 
     axios
       .get(`${import.meta.env.VITE_API_URL}/products/${id}`)
-      .then(resp => {setDetail(resp.data)})
+      .then(resp => { setDetail(resp.data) })
       .catch(error => console.log(error))
       .finally(() => dispatch(setIsLoading(false)))
+      
+    window.scrollTo(0, 0);
 
   }, [id])
 
@@ -45,12 +47,12 @@ const ProductDetail = () => {
     setActiveIndex(index);
   };
 
-  const similarItems = productRelated?.filter((element) =>  element?.categoryId ===detail?.categoryId && detail?.id !== element?.id);
+  const similarItems = productRelated?.filter((element) => element?.categoryId === detail?.categoryId && detail?.id !== element?.id);
 
   const [input, setInput] = useState(1);
   const dispatchPostCart = useDispatch();
   const navigate = useNavigate();
-  
+
   const handleSubmit = () => {
 
     if (localStorage.getItem('token')) {
@@ -64,14 +66,14 @@ const ProductDetail = () => {
       navigate('/login')
     }
   }
-  
+
   return (
 
     <Container className='col-11 conteiner  '  >
 
       {/* title section */}
       <div className="flex justify-content-start  align-items-center mb-5">
-        
+
         <div style={{
           background: "var(--secondary--color)",
           borderRadius: "50%",
@@ -80,7 +82,7 @@ const ProductDetail = () => {
           width: "6px"
         }}
         ></div>
-        <div style={{ fontWeight: 700}}>{detail.title}</div>
+        <div style={{ fontWeight: 700 }}>{detail.title}</div>
       </div>
 
       {/* main content */}
