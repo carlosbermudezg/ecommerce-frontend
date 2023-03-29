@@ -49,7 +49,10 @@ const Cart = ({ show, handleClose, setShow }) => {
     // aca se suman los totales del carrito
     let totalShopping = cart.reduce((a, b) => {
         return a + (b.product?.price * b?.quantity || 0);
-    }, 0);
+    }, 0).toFixed(2);
+    
+    
+    
 
     const deleteElement = (elementId) => {
         axios.delete(`${import.meta.env.VITE_API_URL}/cart/${elementId}`, {
@@ -80,7 +83,7 @@ const Cart = ({ show, handleClose, setShow }) => {
                                             <button onClick={() => deleteElement(element.id)} ><i className="fa-solid fa-trash"></i></button>
                                         </div>
                                         <div className='total'>
-                                            <Card.Text> <span>Total:</span> {element.quantity * element.product?.price}</Card.Text>
+                                            <Card.Text> <span>Total:</span> {(element.quantity * element.product?.price).toFixed(2)}</Card.Text>
                                         </div>
                                     </Card.Body>
                                 )

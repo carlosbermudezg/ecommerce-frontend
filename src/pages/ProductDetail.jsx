@@ -64,9 +64,7 @@ const ProductDetail = () => {
       navigate('/login')
     }
   }
-
-
-
+  
   return (
 
     <Container className='col-11 conteiner  '  >
@@ -187,8 +185,8 @@ const ProductDetail = () => {
               style={{ width: '18rem', textDecoration: 'none' }} className='mx-3 mb-3 d-flex justify-content-start'>
 
               <Card.Body >
-                <Card.Img className='similarItemsImg similarItemsImg0' variant="top" src={`${element.productImgs[0]}`} />
-                <Card.Img className='similarItemsImg similarItemsImg1' variant="top" src={`${element.productImgs[1]}`} />
+                <Card.Img className='similarItemsImg similarItemsImg0' variant="top" src={`${element.productImgs[0].url}`} />
+                <Card.Img className='similarItemsImg similarItemsImg1' variant="top" src={`${element.productImgs[1].url}`} />
               </Card.Body>
 
               <hr style={{ border: `1px solid rgba(0, 0, 0, 0.175)` }} />

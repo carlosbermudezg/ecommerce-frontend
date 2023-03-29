@@ -80,7 +80,7 @@ const Purchases = () => {
 
                   <td>
                     <div className='detailsProduct'>
-                      {`$ ${element.product.price * element.quantity}`}
+                      {`$ ${(element.product.price * element.quantity).toFixed(2)}`}
                     </div>
                   </td>
                 </tr>
